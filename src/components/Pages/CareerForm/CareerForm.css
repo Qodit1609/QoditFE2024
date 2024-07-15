@@ -1,0 +1,23 @@
+.list-group-item{
+cursor: pointer;
+}
+.phone-input-container {
+  position: relative;
+}
+
+.phone-input-container .form-control {
+  padding-left: 50px; 
+  width: 67rem;
+  height: 4.5rem;
+  border-radius: 10px;
+}
+
+.phone-input-container .flag-dropdown {
+  position: absolute;
+  top: 52%;
+  left: 5px;
+  height: 4rem;
+  border: 1px solid white;
+  transform: translateY(-50%);
+}
+
