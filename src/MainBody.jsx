@@ -4,9 +4,13 @@ import { About } from "./components/about";
 import { Services } from "./components/services";
 import { Testimonials } from "./components/testimonials";
 import { LogoSection } from "./components/logoSection";
-import { Helmet } from "react-helmet";
+import { useEffect } from "react";
 
 export const MainBody = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+   }, []);
+
   return (
     <div>
       <Header />

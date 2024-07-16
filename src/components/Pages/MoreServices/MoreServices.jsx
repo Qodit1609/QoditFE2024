@@ -1,10 +1,23 @@
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
+import { useLocation } from "react-router-dom";
 
-export const MoreServices = (props) => {
+export const MoreServices = () => {
+  const location = useLocation();
+  const { state } = location;
+  const { serviceId } = state || {};
+
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    if (serviceId) {
+      const element = document.getElementById(serviceId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "center" })
+      }
+    }
+    else{
+      window.scrollTo(0,0)
+    }
+  }, [serviceId]);
 
   return (
     <div id="service">
@@ -23,19 +36,21 @@ export const MoreServices = (props) => {
 
       <div
         className="service-bg cover-background"
-        style={{ zIndex: 1, position: " relative", paddingTop: "5rem" }}
+        style={{ zIndex: 1, position: "relative", paddingTop: "5rem" }}
       >
         <div className="container h-100">
           <div className="row h-100 align-items-center">
             <div className="col-12 text-center">
-              {/* <h1 className="fw-light">Our Services</h1> */}
+              <h1 className="fw-light">Our Services</h1>
             </div>
           </div>
         </div>
       </div>
-      {/* <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> */}
 
-      <section className="sec-about sec-service mb-1 servicesection" id="#webdevelopmentsection">
+      <section
+        className="sec-about sec-service mb-1 servicesection"
+        id="#webdevelopmentsection"
+      >
         <div className="container">
           <div className="row">
             <div className="col-md-6">
@@ -49,6 +64,7 @@ export const MoreServices = (props) => {
                   intuitive, and performs exceedingly well. We craft your web
                   destination with a clear view of the business goal and ensure
                   that it supports the user-journey.
+                  <a href="#productdevelopmentsection">hgfh</a>
                 </p>
               </div>
             </div>
@@ -86,7 +102,7 @@ export const MoreServices = (props) => {
                   className="
   "
                 >
-               <h2>System Development</h2>
+                  <h2>System Development</h2>
                 </div>
 
                 <p>
@@ -230,7 +246,6 @@ export const MoreServices = (props) => {
           <div className="row">
             <div className="col-md-6">
               <div className="web-content">
-                
                 <div className="web-content-services">
                   <h2>WEB DESIGNER</h2>
                 </div>

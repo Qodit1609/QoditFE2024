@@ -1,18 +1,18 @@
 import React from "react";
-import Carousel from "react-elastic-carousel";
+// import Carousel from "react-elastic-carousel";
 
 export const Testimonials = (props) => {
-  const carouselRef = React.useRef(null);
-  const onNextStart = (currentItem, nextItem) => {
-    if (currentItem.index === nextItem.index) {
-      carouselRef.current.goTo(0);
-    }
-  };
-  const onPrevStart = (currentItem, nextItem) => {
-    if (currentItem.index === nextItem.index) {
-      carouselRef.current.goTo(props.data.length);
-    }
-  };
+  // const carouselRef = React.useRef(null);
+  // const onNextStart = (currentItem, nextItem) => {
+  //   if (currentItem.index === nextItem.index) {
+  //     carouselRef.current.goTo(0);
+  //   }
+  // };
+  // const onPrevStart = (currentItem, nextItem) => {
+  //   if (currentItem.index === nextItem.index) {
+  //     carouselRef.current.goTo(props.data.length);
+  //   }
+  // };
   return (
     <div id="testimonials" style={{ marginTop: "40px" }}>
       <div className="container">
