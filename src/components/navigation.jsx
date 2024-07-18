@@ -1,14 +1,21 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 export const Navigation = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleClick = () => {
-    // Navigate to the contactus page
     navigate("/contactus");
   };
+  
+  const [activeLink, setActiveLink] = useState('');
+
+  useEffect(() => {
+    setActiveLink(location.pathname);
+  }, [location]);
+
 
   return (
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
@@ -39,11 +46,11 @@ export const Navigation = () => {
           className="collapse navbar-collapse"
           id="bs-example-navbar-collapse-1"
         >
-          <ul className="nav navbar-nav navbar-right">
+          <ul className="nav navbar-nav navbar-right link-tag">
             <li className="nav-item">
               <Link
                 to="/about"
-                className="page-scroll hover-underline-animation"
+                className={`page-scroll ${activeLink === '/about' ? 'nav-item-underline' : 'hover-underline-animation'}`}
               >
                 About Us
               </Link>
@@ -51,7 +58,7 @@ export const Navigation = () => {
             <li className="nav-item">
               <Link
                 to="/services"
-                className="page-scroll hover-underline-animation"
+                className={`page-scroll  ${activeLink === '/services' ? 'nav-item-underline' : 'hover-underline-animation'}`}
               >
                 Services
               </Link>
@@ -60,17 +67,18 @@ export const Navigation = () => {
             <li className="nav-item">
               <Link
                 to="/features"
-                className="page-scroll hover-underline-animation"
+                className={`page-scroll ${activeLink === '/features' ? 'nav-item-underline' : 'hover-underline-animation'}`}
+
               >
                 Features
               </Link>
             </li>
 
-            <li>
+            <li className="nav-item" >
               <Link
                 to="/career"
-                style={{ textDecoration: "none" }}
-                className="page-scroll hover-underline-animation"
+                className={`page-scroll ${activeLink === '/career' ? 'nav-item-underline' : 'hover-underline-animation'}`}
+
               >
                 Career
               </Link>

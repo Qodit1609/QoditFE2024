@@ -337,6 +337,9 @@ hr {
   content: "" !important;
   transition: width 0.2s !important;
 }
+.link-tag{
+  margin-top: 3px;
+}
 .navbar-toggle {
   border-radius: 1;
 }
@@ -2355,6 +2358,15 @@ margin-top: 50rem;#new-about
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+
+.link-tag .nav-item .nav-item-underline::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px; 
+  background-color: #0087ca; 
+  margin-top: 6px;
+}
 .contactusbtn {
   /* background-color: rgb(59, 57, 57); */
   background-color: white;
@@ -2364,6 +2376,8 @@ margin-top: 50rem;#new-about
   font-weight: bold;
   font-family: "Lato", sans-serif;
   font-size: 16px;
+  border: none;
+  margin-top: 4px;
 }
 .contactlink {
   color: black;
